@@ -2,7 +2,6 @@ const express = require('express');
 const Web3 = require('web3');
 const app = express();
 
-const app = express();
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/index.html"));
