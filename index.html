@@ -148,7 +148,7 @@
                     "type": "function"
                 }
             ];
-            const Address = ""; // Taking Address from Remix 
+            const Address = "0x2aB6a896F32382714BEec84d7D2f3f18ae8323EE"; // Taking Address from Remix 
             window.web3 = await new Web3(window.ethereum);
             window.contract = await new window.web3.eth.Contract(ABI, Address);
             document.getElementById("contractArea").innerHTML = "Connected to Contract"; // calling the elementID above
