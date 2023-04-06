@@ -17,23 +17,21 @@ console.log(`port: ${portNumber}`);
 
 **/
 
-const express = require('express');
-const Web3 = require('web3');
+const express = require("express");
+const Web3 = require("web3");
 const app = express();
-const path =require('path')
-
+const path = require("path");
+const web3 = new Web3("https://mainnet.infura.io/v3/shoppe");
 
 // Serve static files from the public folder
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/index.html"));
-})
+  res.sendFile(path.join(__dirname + "/index.html"));
+});
 
-// serving the index.html file 
+// serving the index.html file
 
 const server = app.listen(5000);
 const portNumber = server.address().port;
 console.log(`port: ${portNumber}`);
-
-
