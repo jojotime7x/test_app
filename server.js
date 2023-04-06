@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
 
 // serving the index.html file
 
-const server = app.listen(5000);
-const portNumber = server.address().port;
-console.log(`port: ${portNumber}`);
+const server = app.listen(5000, () => {
+  const portNumber = server.address().port;
+  console.log(`Server listening on port ${portNumber}`);
+});
