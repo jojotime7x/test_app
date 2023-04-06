@@ -1,3 +1,5 @@
+import Web3 from "web3";
+
 let account;
 const connectMetamask = async () => {
   if (window.ethereum !== "undefined") {
@@ -103,7 +105,10 @@ const connectContract = async () => {
     },
   ];
   const Address = "0xb9898b3b7e7c2e4f3CA2455F1C0889a1e11E56be"; // Taking Address from Remix
-  window.web3 = await new Web3(window.ethereum);
+  const infuraKey = "1c16ba64e3ff44ac8394b990f027cdd1";
+  const infuraUrl = `https://mainnet.infura.io/v3/${infuraKey}`;
+  const provider = new Web3.providers.HttpProvider(infuraUrl);
+  window.web3 = await new Web3(provider);
   window.contract = await new window.web3.eth.Contract(ABI, Address);
   document.getElementById("contractArea").innerHTML = "Connected to Contract"; // calling the elementID above
 };
